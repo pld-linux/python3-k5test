@@ -1,3 +1,4 @@
+# NOTE: probably works only with MIT Kerberos (with heimdal kadmin stops asking some questions from tty, not even stdin)
 Summary:	Library for testing Python applications in self-contained Kerberos 5 environments
 Summary(pl.UTF-8):	Biblioteka do testowania aplikacji Pythona w samodzielnych środowiskach Kerberosa 5
 Name:		python3-k5test
@@ -13,6 +14,8 @@ BuildRequires:	python3-modules >= 1:3.6
 BuildRequires:	python3-setuptools >= 1:40.6.0
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
+# kadmin command
+Requires:	krb5-server
 Requires:	python3-modules >= 1:3.6
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
